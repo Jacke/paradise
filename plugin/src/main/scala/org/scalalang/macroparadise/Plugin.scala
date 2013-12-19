@@ -12,6 +12,7 @@ class Plugin(val global: Global) extends NscPlugin with AnalyzerPlugins {
   val description = "Empowers production Scala compiler with latest macro developments"
   val components = List[NscPluginComponent](PluginComponent)
   analyzer.addAnalyzerPlugin(AnalyzerPlugin)
+  analyzer.addMacroPlugin(MacroPlugin)
 
   object PluginComponent extends NscPluginComponent {
     val global = Plugin.this.global
